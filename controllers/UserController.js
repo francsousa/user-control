@@ -25,7 +25,9 @@ class UserController {
 
     let user = {}
 
-    this.formEl.elements.forEach(function (field) {
+    let formElements = [...this.formEl.elements]
+
+    formElements.forEach(function (field) {
 
       if (field.name === "gender") {
 
