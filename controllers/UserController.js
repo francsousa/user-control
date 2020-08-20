@@ -184,6 +184,7 @@ class UserController {
     })
 
     document.querySelector("#number-users").innerHTML = numberUsers.toString()
+
     document.querySelector("#number-users-admin").innerHTML = numberAdmin.toString()
 
   }
