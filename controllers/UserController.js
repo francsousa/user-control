@@ -189,9 +189,24 @@ class UserController {
 
           if (field) {
 
-            if (field.type === 'file') continue
+            switch (field.type) {
 
-            field.value = json[name]
+              case 'file':
+                continue
+
+              case 'radio':
+                field = form.querySelector("[name="+ name.replace("_", "") +"][value="+ json[name] +"]")
+                field.checked = true
+                break
+
+              case 'checkbox':
+                field.checked = json[name]
+                break
+
+              default:
+                field.value = json[name]
+
+            }
 
           }
 
